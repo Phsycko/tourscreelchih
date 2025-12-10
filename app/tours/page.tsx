@@ -334,7 +334,7 @@ export default function ToursPage() {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50 py-12">
+    <div className="min-h-screen bg-neutral-50 pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-3 text-neutral-900">Tours y Reservas</h1>
@@ -406,7 +406,6 @@ export default function ToursPage() {
                         </div>
                       </div>
                       <div className="flex items-center justify-between pt-4 border-t border-neutral-100">
-                        <span className="text-2xl font-bold text-neutral-900">${tour.price.toLocaleString()} MXN</span>
                         <button
                           onClick={(e) => {
                             e.stopPropagation()
@@ -417,6 +416,13 @@ export default function ToursPage() {
                           Ver Detalle
                           <ArrowRight size={16} className="ml-1.5 group-hover/btn:translate-x-1 transition-transform" />
                         </button>
+                        <Link
+                          href={`/cotizar?tourId=${tour.id}`}
+                          onClick={(e) => e.stopPropagation()}
+                          className="bg-primary-600 text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-primary-700 transition-colors"
+                        >
+                          Cotizar
+                        </Link>
                       </div>
                     </div>
                   </div>

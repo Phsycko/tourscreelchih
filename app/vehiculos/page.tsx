@@ -2,7 +2,7 @@ import { Users, Car, CheckCircle } from 'lucide-react'
 import Image from 'next/image'
 
 async function getVehicles() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/vehicles`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3002'}/api/vehicles`, {
     cache: 'no-store',
   })
   if (!res.ok) return []
@@ -13,7 +13,7 @@ export default async function VehiclesPage() {
   const vehicles = await getVehicles()
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-50 pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Nuestra Flota</h1>

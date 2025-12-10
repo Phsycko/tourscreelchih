@@ -1,6 +1,45 @@
 import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 
+// Vehículos existentes
+const defaultVehicles = [
+  {
+    id: 'vehicle-1',
+    name: 'Van Comfort',
+    type: 'Van',
+    capacity: 12,
+    description: 'Van cómoda y espaciosa, ideal para grupos medianos.',
+    images: [
+      'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800',
+    ],
+    amenities: [
+      'Aire acondicionado',
+      'Asientos reclinables',
+      'WiFi',
+      'Sistema de sonido',
+    ],
+    isActive: true,
+  },
+  {
+    id: 'vehicle-2',
+    name: 'SUV Premium',
+    type: 'SUV',
+    capacity: 6,
+    description: 'SUV de lujo con todas las comodidades para grupos pequeños.',
+    images: [
+      'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800',
+    ],
+    amenities: [
+      'Aire acondicionado',
+      'Asientos de cuero',
+      'Pantalla de entretenimiento',
+      'WiFi',
+      'Cargador USB',
+    ],
+    isActive: true,
+  },
+]
+
 export async function GET() {
   try {
     const vehicles = await prisma.vehicle.findMany({
@@ -8,20 +47,14 @@ export async function GET() {
       orderBy: { createdAt: 'desc' },
     })
 
-    return NextResponse.json(vehicles)
-  } catch (error: any) {
-    console.error('Error fetching vehicles:', error)
-    
-    // Si no hay conexión a la base de datos, devolver array vacío en lugar de error
-    if (error.code === 'P1001' || error.message?.includes('connect')) {
-      console.warn('Base de datos no disponible, devolviendo array vacío')
-      return NextResponse.json([])
+    if (vehicles.length > 0) {
+      return NextResponse.json(vehicles)
     }
     
-    return NextResponse.json(
-      { error: 'Error fetching vehicles' },
-      { status: 500 }
-    )
+    return NextResponse.json(defaultVehicles)
+  } catch (error: any) {
+    console.error('Error fetching vehicles:', error)
+    return NextResponse.json(defaultVehicles)
   }
 }
 

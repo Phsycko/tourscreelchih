@@ -1,7 +1,6 @@
 'use client'
 
-import { useState } from 'react'
-import { MessageCircle, Phone, Mail, Instagram, Facebook, Send } from 'lucide-react'
+import { MessageCircle, Phone, Facebook, MapPin } from 'lucide-react'
 import Link from 'next/link'
 
 export default function CanalesPage() {
@@ -11,59 +10,41 @@ export default function CanalesPage() {
       name: 'WhatsApp',
       icon: MessageCircle,
       color: 'bg-green-500',
-      description: 'Chatea con nosotros directamente',
+      description: 'Chatea con nosotros directamente por WhatsApp',
       action: 'Abrir WhatsApp',
-      href: 'https://wa.me/1234567890',
-    },
-    {
-      id: 'instagram',
-      name: 'Instagram',
-      icon: Instagram,
-      color: 'bg-pink-500',
-      description: 'Síguenos y envíanos un DM',
-      action: 'Ir a Instagram',
-      href: 'https://instagram.com/ulisestours',
-    },
-    {
-      id: 'facebook',
-      name: 'Facebook',
-      icon: Facebook,
-      color: 'bg-blue-500',
-      description: 'Envíanos un mensaje',
-      action: 'Ir a Facebook',
-      href: 'https://facebook.com/ulisestours',
+      href: 'https://wa.me/526351200217?text=Hola,%20me%20interesa%20información%20sobre%20los%20tours',
     },
     {
       id: 'phone',
       name: 'Llamada Directa',
       icon: Phone,
       color: 'bg-blue-600',
-      description: 'Llámanos ahora',
-      action: 'Llamar',
-      href: 'tel:+1234567890',
+      description: 'Llámanos al +52 635 120 0217',
+      action: 'Llamar Ahora',
+      href: 'tel:+526351200217',
     },
     {
-      id: 'email',
-      name: 'Email',
-      icon: Mail,
-      color: 'bg-gray-600',
-      description: 'Envíanos un correo',
-      action: 'Enviar Email',
-      href: 'mailto:info@ulisestours.com',
+      id: 'facebook',
+      name: 'Facebook',
+      icon: Facebook,
+      color: 'bg-blue-500',
+      description: 'Síguenos y envíanos un mensaje',
+      action: 'Ir a Facebook',
+      href: 'https://www.facebook.com/share/19zfRSrGJS/?mibextid=wwXIfr',
     },
     {
-      id: 'telegram',
-      name: 'Telegram',
-      icon: Send,
-      color: 'bg-blue-400',
-      description: 'Chatea por Telegram',
-      action: 'Abrir Telegram',
-      href: 'https://t.me/ulisestours',
+      id: 'location',
+      name: 'Ubicación',
+      icon: MapPin,
+      color: 'bg-red-500',
+      description: 'Encuéntranos en Creel, Chihuahua',
+      action: 'Ver en Mapa',
+      href: 'https://maps.google.com/?q=Creel,Chihuahua,Mexico',
     },
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-50 pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Canales de Venta</h1>

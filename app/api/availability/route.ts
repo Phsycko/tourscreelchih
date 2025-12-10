@@ -27,10 +27,8 @@ export async function GET(request: Request) {
     return NextResponse.json(availability)
   } catch (error) {
     console.error('Error fetching availability:', error)
-    return NextResponse.json(
-      { error: 'Error fetching availability' },
-      { status: 500 }
-    )
+    // Devolver array vacío en lugar de error para evitar errores en el frontend
+    return NextResponse.json([])
   }
 }
 

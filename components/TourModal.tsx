@@ -213,7 +213,7 @@ export default function TourModal({ tour, isOpen, onClose, vehicles }: TourModal
                   : 'border-transparent text-neutral-600 hover:text-neutral-900 hover:bg-white/50'
               }`}
             >
-              Reservar
+              Cotizar
             </button>
           </div>
         </div>
@@ -289,10 +289,10 @@ export default function TourModal({ tour, isOpen, onClose, vehicles }: TourModal
           {activeStep === 'price' && (
             <div>
               <div className="text-center mb-8">
-                <div className="text-5xl font-bold text-neutral-900 mb-2">
-                  ${tour.price.toLocaleString()} MXN
+                <div className="text-2xl font-bold text-neutral-900 mb-2">
+                  Información del Tour
                 </div>
-                <div className="text-neutral-600 text-sm">por persona</div>
+                <div className="text-neutral-600 text-sm">Solicita una cotización personalizada</div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 <div className="text-center p-5 bg-neutral-50 rounded-xl border border-neutral-200">
@@ -305,10 +305,13 @@ export default function TourModal({ tour, isOpen, onClose, vehicles }: TourModal
                   <div className="font-medium text-xs text-neutral-600 uppercase tracking-wide mb-1">Capacidad</div>
                   <div className="text-base font-semibold text-neutral-900">Hasta {tour.maxCapacity} personas</div>
                 </div>
-                <div className="text-center p-5 bg-neutral-50 rounded-xl border border-neutral-200">
-                  <DollarSign className="w-7 h-7 mx-auto mb-2.5 text-neutral-700" />
-                  <div className="font-medium text-xs text-neutral-600 uppercase tracking-wide mb-1">Total</div>
-                  <div className="text-base font-semibold text-neutral-900">${totalPrice.toLocaleString()} ({participants} persona{participants > 1 ? 's' : ''})</div>
+                <div className="text-center p-5 bg-primary-50 rounded-xl border border-primary-200">
+                  <a
+                    href={`/cotizar?tourId=${tour.id}`}
+                    className="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+                  >
+                    Solicitar Cotización
+                  </a>
                 </div>
               </div>
             </div>
@@ -431,8 +434,8 @@ export default function TourModal({ tour, isOpen, onClose, vehicles }: TourModal
                     <span>{participants}</span>
                   </div>
                   <div className="flex justify-between items-center pt-2 border-t">
-                    <span className="text-lg font-bold">Total:</span>
-                    <span className="text-2xl font-bold text-neutral-900">${totalPrice.toLocaleString()} MXN</span>
+                    <span className="text-lg font-bold">Participantes:</span>
+                    <span className="text-xl font-bold text-neutral-900">{participants} persona(s)</span>
                   </div>
                 </div>
 
@@ -566,7 +569,7 @@ export default function TourModal({ tour, isOpen, onClose, vehicles }: TourModal
                     disabled={loading || !selectedDate || !selectedTime}
                     className="px-8 py-3 bg-neutral-900 text-white rounded-xl font-semibold hover:bg-neutral-800 transition-all duration-200 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-neutral-900"
                   >
-                    {loading ? 'Procesando...' : 'Reservar y Pagar'}
+                    {loading ? 'Procesando...' : 'Enviar Cotización'}
                   </button>
                 </div>
               </div>

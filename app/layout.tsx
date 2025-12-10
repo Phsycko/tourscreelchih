@@ -4,11 +4,12 @@ import './globals.css'
 import { Toaster } from 'react-hot-toast'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import WhatsAppButton from '@/components/WhatsAppButton'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Ulises Tours - Experiencias Únicas',
+  title: 'Tours Creel Chih. - Experiencias Únicas',
   description: 'Descubre los mejores tours y experiencias con nuestros guías expertos',
 }
 
@@ -25,6 +26,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <WhatsAppButton />
         <Toaster position="top-right" />
       </body>
     </html>

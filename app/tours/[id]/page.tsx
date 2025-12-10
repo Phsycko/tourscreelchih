@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation'
 import ReservationButton from '@/components/ReservationButton'
 
 async function getTour(id: string) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/tours/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3002'}/api/tours/${id}`, {
     cache: 'no-store',
   })
   if (!res.ok) return null
@@ -21,7 +21,7 @@ export default async function TourDetailPage({ params }: { params: { id: string 
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
         <Link
           href="/tours"
           className="inline-flex items-center text-primary-600 hover:text-primary-700 mb-6"
@@ -60,10 +60,12 @@ export default async function TourDetailPage({ params }: { params: { id: string 
                 </div>
               </div>
               <div className="text-right">
-                <div className="text-4xl font-bold text-primary-600 mb-2">
-                  ${tour.price}
-                </div>
-                <div className="text-gray-600">por persona</div>
+                <Link
+                  href={`/cotizar?tourId=${tour.id}`}
+                  className="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+                >
+                  Solicitar Cotización
+                </Link>
               </div>
             </div>
 
