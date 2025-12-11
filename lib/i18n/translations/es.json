@@ -1,0 +1,215 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "tours": "Tours",
+    "gallery": "Galería",
+    "contact": "Contacto",
+    "quote": "Cotizar"
+  },
+  "home": {
+    "hero": {
+      "title": "Descubre Experiencias Únicas",
+      "subtitle": "Tours personalizados con guías expertos que te mostrarán los mejores lugares",
+      "cta": "Solicitar Cotización"
+    },
+    "info": {
+      "badge": "Tu Aventura Comienza Aquí",
+      "title": "Vive la Magia de la Sierra Tarahumara",
+      "description1": "Desde el corazón de",
+      "creel": "Creel, Pueblo Mágico",
+      "description2": "te llevamos a explorar uno de los tesoros naturales más impresionantes de México:",
+      "copperCanyons": "las Barrancas del Cobre",
+      "description3": "un sistema de cañones",
+      "description4": "cuatro veces más grande que el Gran Cañón de Arizona",
+      "description5": "Sumérgete en paisajes que quitan el aliento, cascadas majestuosas, bosques de pino milenarios, aguas termales naturales y la rica cultura del pueblo Rarámuri. Con más de",
+      "years": "12 años de experiencia",
+      "description6": "y guías locales certificados, te garantizamos una experiencia segura, auténtica e inolvidable.",
+      "features": {
+        "certified": "Guías certificados bilingües",
+        "transport": "Transporte seguro y cómodo",
+        "custom": "Tours personalizados",
+        "small": "Grupos pequeños"
+      }
+    },
+    "tours": {
+      "badge": "⭐ Los más solicitados",
+      "title": "Top 3 Tours Destacados",
+      "subtitle": "Las experiencias favoritas de nuestros viajeros",
+      "cta": "Ver Todos los Tours",
+      "popular": "#1 Más Popular",
+      "second": "#2",
+      "third": "#3"
+    },
+    "benefits": {
+      "title": "¿Por Qué Elegirnos?",
+      "expert": {
+        "title": "Guías Expertos",
+        "desc": "Profesionales certificados y apasionados"
+      },
+      "safe": {
+        "title": "100% Seguro",
+        "desc": "Seguro de viaje incluido en todos los tours"
+      },
+      "languages": {
+        "title": "Múltiples Idiomas",
+        "desc": "Español e Inglés"
+      },
+      "guarantee": {
+        "title": "Garantía",
+        "desc": "Satisfacción garantizada o reembolso"
+      }
+    },
+    "stats": {
+      "tours": "Tours Realizados",
+      "clients": "Clientes Satisfechos",
+      "experience": "Años de Experiencia"
+    },
+    "testimonials": {
+      "title": "Lo Que Dicen Nuestros Clientes",
+      "subtitle": "Experiencias reales de viajeros satisfechos"
+    }
+  },
+  "tours": {
+    "title": "Tours y Reservas",
+    "subtitle": "Todo lo que necesitas para planificar tu experiencia",
+    "detail": "Ver Detalle",
+    "quote": "Cotizar",
+    "noTours": "No hay tours disponibles en este momento.",
+    "seedHint": "Si acabas de configurar la base de datos, ejecuta:",
+    "duration": "h",
+    "capacity": "Hasta",
+    "tourTitles": {
+      "tour-kokoyome": "Tour Kokoyome",
+      "tour-creel": "Creel Pueblo Mágico",
+      "tour-campos-menonitas": "Campos Menonitas",
+      "tour-region-tarahumara": "Región Tarahumara",
+      "tour-batopilas": "Batopilas",
+      "tour-entre-canones": "Entre Cañones",
+      "tour-valle-monjes": "Valle de los Monjes",
+      "tour-recowata": "Aguas Termales de Recowata",
+      "tour-basaseachi": "Cascada de Basaseachi",
+      "tour-barrancas-cobre": "Parque Aventura, Barrancas del Cobre"
+    },
+    "tourDescriptions": {
+      "tour-kokoyome": "Tour completo de 11 horas visitando los lugares más hermosos de Kokoyome.",
+      "tour-creel": "Descubre la magia de Creel, un pueblo mágico lleno de cultura, historia y naturaleza. Duración aproximada de 3 a 5 horas.",
+      "tour-campos-menonitas": "Conoce la cultura y tradiciones menonitas en un tour completo que incluye museo, quesería, corredor comercial y deliciosa comida. Duración aproximada de 9 a 10 horas.",
+      "tour-region-tarahumara": "Te llevamos a vivir una experiencia inolvidable en la Región Tarahumara, descubriendo los lugares más emblemáticos de esta cultura ancestral.",
+      "tour-batopilas": "Explora Batopilas, un pueblo mágico en el fondo del cañón, con su rica historia y arquitectura colonial. Duración aproximada 12 hrs.",
+      "tour-entre-canones": "Recorre los miradores más impresionantes entre cañones, disfrutando de vistas panorámicas únicas. Duración aproximada de 10hrs.",
+      "tour-valle-monjes": "Admira las formaciones rocosas únicas del Valle de los Monjes y disfruta de caminatas entre paisajes espectaculares. Duración aproximada de 4 hrs.",
+      "tour-valle-de-los-monjes": "Admira las formaciones rocosas únicas del Valle de los Monjes y disfruta de caminatas entre paisajes espectaculares. Duración aproximada de 4 hrs.",
+      "tour-recowata": "Relájate en las aguas termales naturales de Recowata y disfruta de vistas panorámicas desde el mirador. Duración aproximada de 7 hrs.",
+      "tour-aguas-termales-recowata": "Relájate en las aguas termales naturales de Recowata y disfruta de vistas panorámicas desde el mirador. Duración aproximada de 7 hrs.",
+      "tour-basaseachi": "Visita una de las cascadas más altas de México y explora los miradores con vistas impresionantes. Duración aproximada de 10 hrs.",
+      "tour-cascada-basaseachi": "Visita una de las cascadas más altas de México y explora los miradores con vistas impresionantes. Duración aproximada de 10 hrs.",
+      "tour-barrancas-cobre": "Vive la emoción en el Parque de Aventura Barrancas del Cobre: teleférico, tirolesa, restaurante con vista y más. Duración aproximada 7 u 8 horas.",
+      "tour-parque-aventura": "Vive la aventura en el Parque Aventura Barrancas del Cobre con teleférico, tirolesa y más. Duración aproximada 7 o 8 hrs."
+    }
+  },
+  "tourModal": {
+    "tabs": {
+      "info": "Información",
+      "availability": "Disponibilidad",
+      "reserve": "Cotizar"
+    },
+    "info": {
+      "duration": "Duración",
+      "hours": "horas",
+      "capacity": "Capacidad",
+      "people": "personas",
+      "difficulty": "Dificultad",
+      "itinerary": "Itinerario",
+      "includes": "Incluye:"
+    },
+    "availability": {
+      "selectDate": "Selecciona Fecha",
+      "selectTime": "Selecciona Hora",
+      "selectHour": "Selecciona una hora",
+      "participants": "Número de Participantes",
+      "calendar": "Calendario de Disponibilidad",
+      "available": "Disponible",
+      "unavailable": "No Disponible / Lleno"
+    },
+    "reserve": {
+      "tour": "Tour:",
+      "date": "Fecha:",
+      "time": "Hora:",
+      "participants": "Participantes:",
+      "persons": "persona(s)",
+      "name": "Nombre Completo *",
+      "email": "Email *",
+      "phone": "Teléfono *",
+      "country": "País",
+      "cancel": "Cancelar",
+      "submit": "Enviar Cotización",
+      "processing": "Procesando...",
+      "required": "Este campo es requerido"
+    }
+  },
+  "gallery": {
+    "title": "Galería",
+    "subtitle": "Momentos capturados de nuestros tours"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Estamos aquí para ayudarte a planear tu aventura",
+    "info": {
+      "title": "Información de Contacto",
+      "phone": "Teléfono",
+      "call": "Haz clic para llamar",
+      "whatsapp": "WhatsApp",
+      "chat": "Chatea con nosotros",
+      "facebook": "Facebook",
+      "follow": "Síguenos en redes",
+      "location": "Ubicación",
+      "address": "Creel, Chihuahua, México",
+      "region": "Sierra Tarahumara"
+    },
+    "actions": {
+      "title": "Acciones Rápidas",
+      "quote": "Solicitar Cotización",
+      "tours": "Ver Todos los Tours",
+      "whatsapp": "Preguntar por WhatsApp"
+    },
+    "form": {
+      "title": "Envíanos un Mensaje",
+      "name": "Nombre Completo",
+      "email": "Email",
+      "phone": "Teléfono",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "required": "Este campo es requerido",
+      "namePlaceholder": "Tu nombre completo",
+      "emailPlaceholder": "tu@email.com",
+      "phonePlaceholder": "+52 123 456 7890",
+      "subjectPlaceholder": "¿En qué podemos ayudarte?",
+      "messagePlaceholder": "Escribe tu mensaje aquí..."
+    },
+    "success": "Mensaje enviado exitosamente. Nos pondremos en contacto contigo pronto.",
+    "error": "Error al enviar el mensaje. Por favor, intenta de nuevo o contáctanos directamente por WhatsApp."
+  },
+  "footer": {
+    "description": "Experiencias únicas e inolvidables con nuestros guías expertos en la Sierra Tarahumara.",
+    "quote": "Solicitar Cotización",
+    "tours": "Tours",
+    "viewTours": "Ver Tours",
+    "gallery": "Galería",
+    "quoteLink": "Cotizar",
+    "availability": "Disponibilidad",
+    "info": "Información",
+    "contact": "Contacto",
+    "contactTitle": "Contacto",
+    "whatsapp": "WhatsApp",
+    "location": "Creel, Chihuahua",
+    "rights": "Todos los derechos reservados."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito"
+  }
+}
+

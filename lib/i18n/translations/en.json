@@ -1,0 +1,215 @@
+{
+  "nav": {
+    "home": "Home",
+    "tours": "Tours",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "quote": "Get Quote"
+  },
+  "home": {
+    "hero": {
+      "title": "Discover Unique Experiences",
+      "subtitle": "Customized tours with expert guides who will show you the best places",
+      "cta": "Request Quote"
+    },
+    "info": {
+      "badge": "Your Adventure Starts Here",
+      "title": "Experience the Magic of the Sierra Tarahumara",
+      "description1": "From the heart of",
+      "creel": "Creel, Magic Town",
+      "description2": "we take you to explore one of Mexico's most impressive natural treasures:",
+      "copperCanyons": "the Copper Canyons",
+      "description3": "a canyon system",
+      "description4": "four times larger than the Grand Canyon of Arizona",
+      "description5": "Immerse yourself in breathtaking landscapes, majestic waterfalls, ancient pine forests, natural hot springs, and the rich culture of the Rarámuri people. With over",
+      "years": "12 years of experience",
+      "description6": "and certified local guides, we guarantee you a safe, authentic, and unforgettable experience.",
+      "features": {
+        "certified": "Bilingual certified guides",
+        "transport": "Safe and comfortable transportation",
+        "custom": "Customized tours",
+        "small": "Small groups"
+      }
+    },
+    "tours": {
+      "badge": "⭐ Most Requested",
+      "title": "Top 3 Featured Tours",
+      "subtitle": "Our travelers' favorite experiences",
+      "cta": "View All Tours",
+      "popular": "#1 Most Popular",
+      "second": "#2",
+      "third": "#3"
+    },
+    "benefits": {
+      "title": "Why Choose Us?",
+      "expert": {
+        "title": "Expert Guides",
+        "desc": "Certified and passionate professionals"
+      },
+      "safe": {
+        "title": "100% Safe",
+        "desc": "Travel insurance included in all tours"
+      },
+      "languages": {
+        "title": "Multiple Languages",
+        "desc": "Spanish and English"
+      },
+      "guarantee": {
+        "title": "Guarantee",
+        "desc": "Satisfaction guaranteed or money back"
+      }
+    },
+    "stats": {
+      "tours": "Tours Completed",
+      "clients": "Happy Clients",
+      "experience": "Years of Experience"
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "subtitle": "Real experiences from satisfied travelers"
+    }
+  },
+  "tours": {
+    "title": "Tours and Reservations",
+    "subtitle": "Everything you need to plan your experience",
+    "detail": "View Details",
+    "quote": "Get Quote",
+    "noTours": "No tours available at this time.",
+    "seedHint": "If you just set up the database, run:",
+    "duration": "h",
+    "capacity": "Up to",
+    "tourTitles": {
+      "tour-kokoyome": "Kokoyome Tour",
+      "tour-creel": "Creel Magic Town",
+      "tour-campos-menonitas": "Mennonite Fields",
+      "tour-region-tarahumara": "Tarahumara Region",
+      "tour-batopilas": "Batopilas",
+      "tour-entre-canones": "Between Canyons",
+      "tour-valle-monjes": "Valley of the Monks",
+      "tour-recowata": "Recowata Hot Springs",
+      "tour-basaseachi": "Basaseachi Waterfall",
+      "tour-barrancas-cobre": "Adventure Park, Copper Canyon"
+    },
+    "tourDescriptions": {
+      "tour-kokoyome": "Complete 11-hour tour visiting the most beautiful places in Kokoyome.",
+      "tour-creel": "Discover the magic of Creel, a magical town full of culture, history, and nature. Approximate duration of 3 to 5 hours.",
+      "tour-campos-menonitas": "Learn about Mennonite culture and traditions on a complete tour that includes a museum, cheese factory, commercial corridor, and delicious food. Approximate duration of 9 to 10 hours.",
+      "tour-region-tarahumara": "We take you to experience an unforgettable adventure in the Tarahumara Region, discovering the most emblematic places of this ancestral culture.",
+      "tour-batopilas": "Explore Batopilas, a magical town at the bottom of the canyon, with its rich history and colonial architecture. Approximate duration 12 hrs.",
+      "tour-entre-canones": "Tour the most impressive viewpoints between canyons, enjoying unique panoramic views. Approximate duration of 10hrs.",
+      "tour-valle-monjes": "Admire the unique rock formations of the Valley of the Monks and enjoy walks through spectacular landscapes. Approximate duration of 4 hrs.",
+      "tour-valle-de-los-monjes": "Admire the unique rock formations of the Valley of the Monks and enjoy walks through spectacular landscapes. Approximate duration of 4 hrs.",
+      "tour-recowata": "Relax in the natural hot springs of Recowata and enjoy panoramic views from the viewpoint. Approximate duration of 7 hrs.",
+      "tour-aguas-termales-recowata": "Relax in the natural hot springs of Recowata and enjoy panoramic views from the viewpoint. Approximate duration of 7 hrs.",
+      "tour-basaseachi": "Visit one of Mexico's highest waterfalls and explore the viewpoints with impressive views. Approximate duration of 10 hrs.",
+      "tour-cascada-basaseachi": "Visit one of Mexico's highest waterfalls and explore the viewpoints with impressive views. Approximate duration of 10 hrs.",
+      "tour-barrancas-cobre": "Experience the adventure at the Barrancas del Cobre Adventure Park with cable car, zipline, and more. Approximate duration 7 or 8 hrs.",
+      "tour-parque-aventura": "Experience the adventure at the Barrancas del Cobre Adventure Park with cable car, zipline, and more. Approximate duration 7 or 8 hrs."
+    }
+  },
+  "tourModal": {
+    "tabs": {
+      "info": "Information",
+      "availability": "Availability",
+      "reserve": "Get Quote"
+    },
+    "info": {
+      "duration": "Duration",
+      "hours": "hours",
+      "capacity": "Capacity",
+      "people": "people",
+      "difficulty": "Difficulty",
+      "itinerary": "Itinerary",
+      "includes": "Includes:"
+    },
+    "availability": {
+      "selectDate": "Select Date",
+      "selectTime": "Select Time",
+      "selectHour": "Select a time",
+      "participants": "Number of Participants",
+      "calendar": "Availability Calendar",
+      "available": "Available",
+      "unavailable": "Unavailable / Full"
+    },
+    "reserve": {
+      "tour": "Tour:",
+      "date": "Date:",
+      "time": "Time:",
+      "participants": "Participants:",
+      "persons": "person(s)",
+      "name": "Full Name *",
+      "email": "Email *",
+      "phone": "Phone *",
+      "country": "Country",
+      "cancel": "Cancel",
+      "submit": "Send Quote Request",
+      "processing": "Processing...",
+      "required": "This field is required"
+    }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Moments captured from our tours"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We're here to help you plan your adventure",
+    "info": {
+      "title": "Contact Information",
+      "phone": "Phone",
+      "call": "Click to call",
+      "whatsapp": "WhatsApp",
+      "chat": "Chat with us",
+      "facebook": "Facebook",
+      "follow": "Follow us on social media",
+      "location": "Location",
+      "address": "Creel, Chihuahua, Mexico",
+      "region": "Sierra Tarahumara"
+    },
+    "actions": {
+      "title": "Quick Actions",
+      "quote": "Request Quote",
+      "tours": "View All Tours",
+      "whatsapp": "Ask via WhatsApp"
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "required": "This field is required",
+      "namePlaceholder": "Your full name",
+      "emailPlaceholder": "your@email.com",
+      "phonePlaceholder": "+1 234 567 8900",
+      "subjectPlaceholder": "How can we help you?",
+      "messagePlaceholder": "Write your message here..."
+    },
+    "success": "Message sent successfully. We will contact you soon.",
+    "error": "Error sending message. Please try again or contact us directly via WhatsApp."
+  },
+  "footer": {
+    "description": "Unique and unforgettable experiences with our expert guides in the Sierra Tarahumara.",
+    "quote": "Request Quote",
+    "tours": "Tours",
+    "viewTours": "View Tours",
+    "gallery": "Gallery",
+    "quoteLink": "Get Quote",
+    "availability": "Availability",
+    "info": "Information",
+    "contact": "Contact",
+    "contactTitle": "Contact",
+    "whatsapp": "WhatsApp",
+    "location": "Creel, Chihuahua",
+    "rights": "All rights reserved."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  }
+}
+

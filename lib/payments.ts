@@ -40,6 +40,7 @@ export async function createMercadoPagoPreference(
     body: {
       items: [
         {
+          id: `tour-${Date.now()}`,
           title,
           quantity: 1,
           unit_price: amount,

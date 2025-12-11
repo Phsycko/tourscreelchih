@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 
 // Vehículos existentes
+// NOTA: Las imágenes deben ser actualizadas con los IDs correctos de Google Drive
+// Formato: https://lh3.googleusercontent.com/d/FILE_ID
 const defaultVehicles = [
   {
     id: 'vehicle-1',
@@ -10,7 +12,7 @@ const defaultVehicles = [
     capacity: 12,
     description: 'Van cómoda y espaciosa, ideal para grupos medianos.',
     images: [
-      'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800',
+      'https://lh3.googleusercontent.com/d/PLACEHOLDER_VAN_ID',
     ],
     amenities: [
       'Aire acondicionado',
@@ -27,7 +29,7 @@ const defaultVehicles = [
     capacity: 6,
     description: 'SUV de lujo con todas las comodidades para grupos pequeños.',
     images: [
-      'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800',
+      'https://lh3.googleusercontent.com/d/PLACEHOLDER_SUV_ID',
     ],
     amenities: [
       'Aire acondicionado',

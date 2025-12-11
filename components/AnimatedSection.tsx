@@ -36,3 +36,4 @@ export function AnimatedDiv({ children, delay = 0, className = '' }: AnimatedSec
   )
 }
 
+

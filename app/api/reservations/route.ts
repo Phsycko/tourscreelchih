@@ -84,7 +84,7 @@ export async function POST(request: Request) {
     }
 
     // Create or get client
-    let clientRecord = await prisma.client.findUnique({
+    let clientRecord = await prisma.client.findFirst({
       where: { email: client.email },
     })
 

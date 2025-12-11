@@ -26,47 +26,47 @@ const images = [
     description: 'Corazón de la Sierra Tarahumara'
   },
   {
-    url: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=80',
+    url: 'https://chihuahua.gob.mx/sites/default/atach2/noticias/imagen-destacada/2023-10/IMG-20231015-WA0004.jpg',
     title: 'Batopilas, Pueblo Mágico',
     description: 'Joya colonial en el fondo del cañón'
   },
   {
-    url: 'https://images.unsplash.com/photo-1609788063095-d71bf3c1f01f?w=1920&q=90',
+    url: 'https://www.mexicodesconocido.com.mx/wp-content/uploads/2022/06/kokoyome-chihuahua.jpg',
     title: 'Kokoyome',
     description: 'Formaciones rocosas únicas de la Sierra Tarahumara'
   },
   {
-    url: 'https://images.unsplash.com/photo-1600298881974-6be191ceeda1?w=1200&q=80',
+    url: 'https://static.wixstatic.com/media/cf3297_4c1c0856b16e47f1a6f1fc3872a6575e~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/cf3297_4c1c0856b16e47f1a6f1fc3872a6575e~mv2.jpg',
     title: 'Aguas Termales de Recowata',
     description: 'Relájate en aguas termales naturales'
   },
   {
-    url: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80',
+    url: 'https://static.wixstatic.com/media/240fe8_1a03fd6b7f3e416bbff8069afd4ce906~mv2.jpg/v1/fill/w_1480,h_986,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/240fe8_1a03fd6b7f3e416bbff8069afd4ce906~mv2.jpg',
     title: 'Mirador Cerro del Gallego',
     description: 'Vistas panorámicas impresionantes de la sierra'
   },
   {
-    url: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80',
+    url: 'https://www.mexicodesconocido.com.mx/wp-content/uploads/2019/02/MENONITAS-XV.jpg',
     title: 'Campos Menonitas',
     description: 'Cultura y tradiciones menonitas de Chihuahua'
   },
   {
-    url: 'https://images.unsplash.com/photo-1444930694458-01babf71870c?w=1200&q=80',
+    url: 'https://escapadas.mexicodesconocido.com.mx/wp-content/uploads/2023/12/Mario-Alonso-Carrasco-Soto-1536x1152.jpeg',
     title: 'Valle de las Ranas',
     description: 'Formaciones rocosas con formas de ranas gigantes'
   },
   {
-    url: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=1200&q=80',
+    url: 'https://cdn.unotv.com/images/2024/05/cascada-de-basaseachi-110108.jpg',
     title: 'Cascada de Basaseachi',
     description: 'Una de las cascadas más altas de México'
   },
   {
-    url: 'https://images.unsplash.com/photo-1548769905-5d0614a8c4e4?w=1200&q=80',
+    url: 'https://static.wixstatic.com/media/969a80_43570240a269445faced04d5a9a77ac0~mv2.jpg/v1/fill/w_2048,h_1360,al_c,q_90/969a80_43570240a269445faced04d5a9a77ac0~mv2.webp',
     title: 'Misión San Ignacio',
     description: 'Histórica misión jesuita del siglo XVIII'
   },
   {
-    url: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&q=80',
+    url: 'https://www.mexicodesconocido.com.mx/wp-content/uploads/2025/07/Tony-Izaguirre3.webp',
     title: 'Cerocahui',
     description: 'Pintoresco pueblo en el corazón de la sierra'
   },
@@ -119,7 +119,7 @@ export default function ImageCarousel() {
   }
 
   return (
-    <div className="relative w-full h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl group">
+    <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl group">
       {/* Images */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -130,14 +130,21 @@ export default function ImageCarousel() {
           transition={{ duration: 0.7 }}
           className="absolute inset-0"
         >
-          <div
-            className="w-full h-full bg-cover bg-center bg-no-repeat"
-            style={{ 
-              backgroundImage: `url('${images[currentIndex].url}')`,
-              imageRendering: 'auto',
+          <img
+            src={images[currentIndex].url}
+            alt={images[currentIndex].title}
+            className="w-full h-full object-cover"
+            style={{
+              imageRendering: '-webkit-optimize-contrast',
               backfaceVisibility: 'hidden',
-              transform: 'translateZ(0)'
-            }}
+              transform: 'translateZ(0)',
+              willChange: 'transform',
+              WebkitFontSmoothing: 'antialiased',
+              MozOsxFontSmoothing: 'grayscale',
+            } as React.CSSProperties}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -145,7 +152,7 @@ export default function ImageCarousel() {
       </AnimatePresence>
 
       {/* Content */}
-      <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
@@ -154,10 +161,10 @@ export default function ImageCarousel() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-3xl md:text-4xl font-bold mb-2 drop-shadow-lg">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2 drop-shadow-lg">
               {images[currentIndex].title}
             </h3>
-            <p className="text-lg md:text-xl text-white/90 drop-shadow-md">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 drop-shadow-md">
               {images[currentIndex].description}
             </p>
           </motion.div>
@@ -167,29 +174,29 @@ export default function ImageCarousel() {
       {/* Navigation Arrows */}
       <button
         onClick={goToPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full opacity-70 sm:opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 touch-manipulation active:scale-95"
         aria-label="Anterior"
       >
-        <ChevronLeft size={28} />
+        <ChevronLeft size={20} className="sm:w-7 sm:h-7" />
       </button>
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full opacity-70 sm:opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 touch-manipulation active:scale-95"
         aria-label="Siguiente"
       >
-        <ChevronRight size={28} />
+        <ChevronRight size={20} className="sm:w-7 sm:h-7" />
       </button>
 
       {/* Dots */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+      <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`h-2 sm:h-3 rounded-full transition-all duration-300 touch-manipulation ${
               index === currentIndex
-                ? 'bg-white w-8'
-                : 'bg-white/50 hover:bg-white/80'
+                ? 'bg-white w-6 sm:w-8'
+                : 'bg-white/50 hover:bg-white/80 w-2 sm:w-3'
             }`}
             aria-label={`Ir a imagen ${index + 1}`}
           />

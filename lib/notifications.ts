@@ -2,24 +2,35 @@ import { prisma } from './prisma'
 import nodemailer from 'nodemailer'
 import twilio from 'twilio'
 
-const twilioClient = twilio(
-  process.env.TWILIO_ACCOUNT_SID,
-  process.env.TWILIO_AUTH_TOKEN
-)
+const getTwilioClient = () => {
+  if (!process.env.TWILIO_ACCOUNT_SID || !process.env.TWILIO_AUTH_TOKEN) {
+    return null
+  }
+  return twilio(
+    process.env.TWILIO_ACCOUNT_SID,
+    process.env.TWILIO_AUTH_TOKEN
+  )
+}
 
-const emailTransporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT || '587'),
-  secure: false,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-})
+const getEmailTransporter = () => {
+  if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+    return null
+  }
+  return nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: parseInt(process.env.SMTP_PORT || '587'),
+    secure: false,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  })
+}
 
 export async function sendWhatsAppMessage(to: string, message: string) {
   try {
-    if (!process.env.TWILIO_ACCOUNT_SID) {
+    const twilioClient = getTwilioClient()
+    if (!twilioClient) {
       console.log('WhatsApp not configured, skipping:', message)
       return
     }
@@ -36,7 +47,8 @@ export async function sendWhatsAppMessage(to: string, message: string) {
 
 export async function sendEmail(to: string, subject: string, html: string) {
   try {
-    if (!process.env.SMTP_USER) {
+    const emailTransporter = getEmailTransporter()
+    if (!emailTransporter) {
       console.log('Email not configured, skipping:', subject)
       return
     }

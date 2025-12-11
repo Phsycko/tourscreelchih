@@ -1,11 +1,12 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { MapPin, Car, Users, Clock, ArrowRight, CheckCircle } from 'lucide-react'
+import { MapPin, Users, Clock, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { AnimatedSection } from '@/components/AnimatedSection'
 import TourModal from '@/components/TourModal'
+import { useTranslation } from '@/lib/i18n/context'
 
 interface Tour {
   id: string
@@ -23,23 +24,13 @@ interface Tour {
   requirements?: string[]
 }
 
-interface Vehicle {
-  id: string
-  name: string
-  capacity: number
-  type: string
-  description: string
-  images: string[]
-  amenities: string[]
-}
 
 
 export default function ToursPage() {
-  const [activeTab, setActiveTab] = useState<'tours' | 'vehicles'>('tours')
+  const { t } = useTranslation()
   const [selectedTour, setSelectedTour] = useState<Tour | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [tours, setTours] = useState<Tour[]>([])
-  const [vehicles, setVehicles] = useState<Vehicle[]>([])
   const [loading, setLoading] = useState(true)
 
   // Tours por defecto
@@ -91,9 +82,9 @@ export default function ToursPage() {
       duration: 9,
       maxCapacity: 20,
       difficulty: 'Fácil',
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+      image: 'https://www.mexicodesconocido.com.mx/wp-content/uploads/2019/02/MENONITAS-XV.jpg',
       images: [
-        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+        'https://www.mexicodesconocido.com.mx/wp-content/uploads/2019/02/MENONITAS-XV.jpg',
       ],
       itinerary: [
         'Museo Menonita',
@@ -111,9 +102,9 @@ export default function ToursPage() {
       duration: 10,
       maxCapacity: 18,
       difficulty: 'Moderado',
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+      image: 'https://static.wixstatic.com/media/969a80_43570240a269445faced04d5a9a77ac0~mv2.jpg/v1/fill/w_2048,h_1360,al_c,q_90/969a80_43570240a269445faced04d5a9a77ac0~mv2.webp',
       images: [
-        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+        'https://static.wixstatic.com/media/969a80_43570240a269445faced04d5a9a77ac0~mv2.jpg/v1/fill/w_2048,h_1360,al_c,q_90/969a80_43570240a269445faced04d5a9a77ac0~mv2.webp',
       ],
       itinerary: [
         'Valle de las Ranas',
@@ -136,9 +127,9 @@ export default function ToursPage() {
       duration: 12,
       maxCapacity: 18,
       difficulty: 'Moderado',
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+      image: 'https://chihuahua.gob.mx/sites/default/atach2/noticias/imagen-destacada/2023-10/IMG-20231015-WA0004.jpg',
       images: [
-        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+        'https://chihuahua.gob.mx/sites/default/atach2/noticias/imagen-destacada/2023-10/IMG-20231015-WA0004.jpg',
       ],
       itinerary: [
         'Mirador de la Bufa',
@@ -156,9 +147,9 @@ export default function ToursPage() {
       duration: 10,
       maxCapacity: 18,
       difficulty: 'Moderado',
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+      image: 'https://static.wixstatic.com/media/240fe8_1a03fd6b7f3e416bbff8069afd4ce906~mv2.jpg/v1/fill/w_1480,h_986,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/240fe8_1a03fd6b7f3e416bbff8069afd4ce906~mv2.jpg',
       images: [
-        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+        'https://static.wixstatic.com/media/240fe8_1a03fd6b7f3e416bbff8069afd4ce906~mv2.jpg/v1/fill/w_1480,h_986,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/240fe8_1a03fd6b7f3e416bbff8069afd4ce906~mv2.jpg',
       ],
       itinerary: [
         'Mirador Cerro del Gallego',
@@ -196,9 +187,9 @@ export default function ToursPage() {
       duration: 7,
       maxCapacity: 15,
       difficulty: 'Fácil',
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+      image: 'https://static.wixstatic.com/media/cf3297_4c1c0856b16e47f1a6f1fc3872a6575e~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/cf3297_4c1c0856b16e47f1a6f1fc3872a6575e~mv2.jpg',
       images: [
-        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+        'https://static.wixstatic.com/media/cf3297_4c1c0856b16e47f1a6f1fc3872a6575e~mv2.jpg/v1/fill/w_1200,h_800,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/cf3297_4c1c0856b16e47f1a6f1fc3872a6575e~mv2.jpg',
       ],
       itinerary: [
         'Mirador de Tararekua',
@@ -214,9 +205,9 @@ export default function ToursPage() {
       duration: 10,
       maxCapacity: 18,
       difficulty: 'Moderado',
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+      image: 'https://cdn.unotv.com/images/2024/05/cascada-de-basaseachi-110108.jpg',
       images: [
-        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+        'https://cdn.unotv.com/images/2024/05/cascada-de-basaseachi-110108.jpg',
       ],
       itinerary: [
         'Nacimiento de la Cascada',
@@ -260,21 +251,13 @@ export default function ToursPage() {
 
   const fetchData = async () => {
     try {
-      const [toursRes, vehiclesRes] = await Promise.all([
-        fetch('/api/tours'),
-        fetch('/api/vehicles')
-      ])
+      const toursRes = await fetch('/api/tours')
       
       if (!toursRes.ok) {
         throw new Error('Error al cargar tours')
       }
       
-      if (!vehiclesRes.ok) {
-        throw new Error('Error al cargar vehículos')
-      }
-      
       const toursData = await toursRes.json()
-      const vehiclesData = await vehiclesRes.json()
       
       // Verificar si hay error en la respuesta
       if (toursData.error) {
@@ -296,18 +279,10 @@ export default function ToursPage() {
           setTours(sorted)
         }
       }
-      
-      if (vehiclesData.error) {
-        console.error('Error en API vehicles:', vehiclesData.error)
-        setVehicles([])
-      } else {
-        setVehicles(Array.isArray(vehiclesData) ? vehiclesData : [])
-      }
     } catch (error) {
       console.error('Error fetching data:', error)
       // Si hay error, usar los tours por defecto
       setTours(defaultTours)
-      setVehicles([])
     } finally {
       setLoading(false)
     }
@@ -315,10 +290,6 @@ export default function ToursPage() {
 
 
 
-  const tabs = [
-    { id: 'tours', label: 'Tours', icon: MapPin },
-    { id: 'vehicles', label: 'Vehículos', icon: Car },
-  ]
 
   const handleTourClick = (tour: Tour) => {
     setSelectedTour(tour)
@@ -334,56 +305,34 @@ export default function ToursPage() {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50 pt-24 pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-3 text-neutral-900">Tours y Reservas</h1>
-          <p className="text-neutral-600 text-lg font-light">Todo lo que necesitas para planificar tu experiencia</p>
+    <div className="min-h-screen bg-neutral-50 pt-20 sm:pt-24 pb-8 sm:pb-12">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-neutral-900 px-2">{t('tours.title')}</h1>
+          <p className="text-neutral-600 text-sm sm:text-base md:text-lg font-light px-2">{t('tours.subtitle')}</p>
         </div>
 
-        {/* Tabs */}
-        <div className="mb-10 bg-white rounded-xl shadow-sm border border-neutral-200 p-1.5">
-          <div className="flex flex-wrap gap-2">
-            {tabs.map((tab) => {
-              const Icon = tab.icon
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id as any)}
-                  className={`flex items-center space-x-2.5 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
-                    activeTab === tab.id
-                      ? 'bg-neutral-900 text-white shadow-sm'
-                      : 'text-neutral-700 hover:bg-neutral-100 hover:text-neutral-900'
-                  }`}
-                >
-                  <Icon size={18} />
-                  <span>{tab.label}</span>
-                </button>
-              )
-            })}
-          </div>
-        </div>
-
-        {/* Tours Tab */}
-        {activeTab === 'tours' && (
-          <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Tours */}
+        <div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               {Array.isArray(tours) && tours.length > 0 ? tours.map((tour) => (
                 <AnimatedSection key={tour.id}>
                   <div 
                     onClick={() => handleTourClick(tour)}
                     className="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden hover:shadow-md hover:border-neutral-300 transition-all duration-300 cursor-pointer group"
                   >
-                    <div className="relative h-56 w-full overflow-hidden bg-neutral-100">
+                    <div className="relative h-48 sm:h-56 w-full overflow-hidden bg-neutral-100">
                       <img
-                        src={tour.image || 'https://lh3.googleusercontent.com/d/1oCcVps4HIu2A2B9S34bzonD1aWgIfHQ2'}
+                        src={(tour.id === 'tour-kokoyome' || tour.title === 'Tour Kokoyome') ? 'https://lh3.googleusercontent.com/d/1oCcVps4HIu2A2B9S34bzonD1aWgIfHQ2' : (tour.image || 'https://lh3.googleusercontent.com/d/1oCcVps4HIu2A2B9S34bzonD1aWgIfHQ2')}
                         alt={tour.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                         onError={(e) => {
                           // Si falla, intentar formato alternativo de Google Drive
                           const currentSrc = e.currentTarget.src
-                          if (currentSrc.includes('lh3.googleusercontent.com')) {
+                          if (tour.id === 'tour-kokoyome' || tour.title === 'Tour Kokoyome') {
+                            e.currentTarget.src = 'https://lh3.googleusercontent.com/d/1oCcVps4HIu2A2B9S34bzonD1aWgIfHQ2'
+                          } else if (currentSrc.includes('lh3.googleusercontent.com')) {
                             e.currentTarget.src = 'https://drive.google.com/uc?export=view&id=1oCcVps4HIu2A2B9S34bzonD1aWgIfHQ2'
                           } else if (currentSrc.includes('drive.google.com')) {
                             e.currentTarget.src = 'https://lh3.googleusercontent.com/d/1oCcVps4HIu2A2B9S34bzonD1aWgIfHQ2'
@@ -392,36 +341,46 @@ export default function ToursPage() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-2.5 text-neutral-900">{tour.title}</h3>
-                      <p className="text-neutral-600 mb-5 line-clamp-2 text-sm leading-relaxed">{tour.description}</p>
-                      <div className="flex items-center space-x-5 mb-5 text-xs text-neutral-500">
+                    <div className="p-4 sm:p-6">
+                      <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-2.5 text-neutral-900">
+                        {(() => {
+                          const translatedTitle = t(`tours.tourTitles.${tour.id}`)
+                          return translatedTitle && translatedTitle !== `tours.tourTitles.${tour.id}` ? translatedTitle : tour.title
+                        })()}
+                      </h3>
+                      <p className="text-neutral-600 mb-4 sm:mb-5 line-clamp-2 text-xs sm:text-sm leading-relaxed">
+                        {(() => {
+                          const translated = t(`tours.tourDescriptions.${tour.id}`)
+                          return translated && translated !== `tours.tourDescriptions.${tour.id}` ? translated : tour.description
+                        })()}
+                      </p>
+                      <div className="flex items-center space-x-4 sm:space-x-5 mb-4 sm:mb-5 text-xs text-neutral-500">
                         <div className="flex items-center">
-                          <Clock size={14} className="mr-1.5 text-neutral-400" />
-                          <span>{tour.duration}h</span>
+                          <Clock size={12} className="sm:w-[14px] sm:h-[14px] mr-1 sm:mr-1.5 text-neutral-400" />
+                          <span>{tour.duration}{t('tours.duration')}</span>
                         </div>
                         <div className="flex items-center">
-                          <Users size={14} className="mr-1.5 text-neutral-400" />
-                          <span>Hasta {tour.maxCapacity}</span>
+                          <Users size={12} className="sm:w-[14px] sm:h-[14px] mr-1 sm:mr-1.5 text-neutral-400" />
+                          <span>{t('tours.capacity')} {tour.maxCapacity}</span>
                         </div>
                       </div>
-                      <div className="flex items-center justify-between pt-4 border-t border-neutral-100">
+                      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 sm:gap-0 pt-3 sm:pt-4 border-t border-neutral-100">
                         <button
                           onClick={(e) => {
                             e.stopPropagation()
                             handleTourClick(tour)
                           }}
-                          className="flex items-center text-neutral-700 hover:text-neutral-900 font-medium text-sm group/btn"
+                          className="flex items-center justify-center text-neutral-700 hover:text-neutral-900 font-medium text-sm group/btn touch-manipulation py-2 sm:py-0"
                         >
-                          Ver Detalle
+                          {t('tours.detail')}
                           <ArrowRight size={16} className="ml-1.5 group-hover/btn:translate-x-1 transition-transform" />
                         </button>
                         <Link
                           href={`/cotizar?tourId=${tour.id}`}
                           onClick={(e) => e.stopPropagation()}
-                          className="bg-primary-600 text-white px-4 py-2 rounded-lg font-semibold text-sm hover:bg-primary-700 transition-colors"
+                          className="bg-primary-600 text-white px-4 py-2.5 sm:py-2 rounded-lg font-semibold text-sm hover:bg-primary-700 transition-colors text-center touch-manipulation active:bg-primary-800"
                         >
-                          Cotizar
+                          {t('tours.quote')}
                         </Link>
                       </div>
                     </div>
@@ -429,69 +388,14 @@ export default function ToursPage() {
                 </AnimatedSection>
               )) : (
                 <div className="col-span-full text-center py-16 bg-white rounded-xl shadow-sm border border-neutral-200 p-8">
-                  <p className="text-neutral-600 text-lg mb-3 font-medium">No hay tours disponibles en este momento.</p>
+                  <p className="text-neutral-600 text-lg mb-3 font-medium">{t('tours.noTours')}</p>
                   <p className="text-sm text-neutral-500">
-                    Si acabas de configurar la base de datos, ejecuta: <code className="bg-neutral-100 text-neutral-700 px-2.5 py-1 rounded-md text-xs font-mono">npm run db:seed</code>
+                    {t('tours.seedHint')} <code className="bg-neutral-100 text-neutral-700 px-2.5 py-1 rounded-md text-xs font-mono">npm run db:seed</code>
                   </p>
                 </div>
               )}
-            </div>
           </div>
-        )}
-
-        {/* Vehicles Tab */}
-        {activeTab === 'vehicles' && (
-            <div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {vehicles.map((vehicle) => (
-                <AnimatedSection key={vehicle.id}>
-                  <div className="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden hover:shadow-md hover:border-neutral-300 transition-all duration-300 group">
-                    {vehicle.images && vehicle.images.length > 0 && (
-                      <div className="relative h-64 w-full overflow-hidden">
-                        <Image
-                          src={vehicle.images[0]}
-                          alt={vehicle.name}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
-                    )}
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold mb-2.5 text-neutral-900">{vehicle.name}</h3>
-                      <p className="text-neutral-600 mb-5 text-sm leading-relaxed">{vehicle.description}</p>
-                      <div className="flex items-center space-x-5 mb-5 text-xs text-neutral-500">
-                        <div className="flex items-center">
-                          <Users size={14} className="mr-1.5 text-neutral-400" />
-                          <span>Capacidad: {vehicle.capacity}</span>
-                        </div>
-                        <div className="flex items-center">
-                          <Car size={14} className="mr-1.5 text-neutral-400" />
-                          <span>{vehicle.type}</span>
-                        </div>
-                      </div>
-                      {vehicle.amenities && vehicle.amenities.length > 0 && (
-                        <div className="mb-4 pt-4 border-t border-neutral-100">
-                          <h4 className="font-medium mb-3 text-sm text-neutral-700">Comodidades:</h4>
-                          <div className="flex flex-wrap gap-2">
-                            {vehicle.amenities.map((amenity: string, index: number) => (
-                              <span
-                                key={index}
-                                className="flex items-center text-xs bg-neutral-100 text-neutral-700 px-3 py-1.5 rounded-md border border-neutral-200"
-                              >
-                                <CheckCircle size={12} className="mr-1.5 text-neutral-600" />
-                                {amenity}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        )}
+        </div>
       </div>
 
       {/* Tour Modal */}
@@ -502,7 +406,6 @@ export default function ToursPage() {
           setIsModalOpen(false)
           setSelectedTour(null)
         }}
-        vehicles={vehicles}
       />
     </div>
   )
