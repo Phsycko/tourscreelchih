@@ -2,50 +2,37 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useTranslation } from '@/lib/i18n/context'
-import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
-  const pathname = usePathname()
-  const { t } = useTranslation()
-  
-  // En inicio se oculta hasta scroll, en otras páginas siempre visible
-  const isHomePage = pathname === '/'
+  const [hasScrolled, setHasScrolled] = useState(false)
 
   useEffect(() => {
-    if (!isHomePage) {
-      // En otras páginas, siempre visible
-      setIsVisible(true)
-      return
-    }
-
-    // Solo en inicio: ocultar/mostrar con scroll
     const handleScroll = () => {
       const scrollY = window.scrollY
+      // Show navbar after scrolling 100px
       if (scrollY > 100) {
         setIsVisible(true)
+        setHasScrolled(true)
       } else {
         setIsVisible(false)
+        setHasScrolled(false)
       }
     }
 
-    // Inicialmente oculto en inicio
-    setIsVisible(false)
-    
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [isHomePage])
+  }, [])
 
   const menuItems = [
-    { href: '/', label: t('nav.home') },
-    { href: '/tours', label: t('nav.tours') },
-    { href: '/galeria', label: t('nav.gallery') },
-    { href: '/contacto', label: t('nav.contact') },
+    { href: '/', label: 'Inicio' },
+    { href: '/tours', label: 'Tours' },
+    { href: '/galeria', label: 'Galería' },
+    { href: '/contacto', label: 'Contacto' },
+    { href: '/canales', label: 'Canales de Venta' },
   ]
 
   return (
@@ -58,37 +45,29 @@ export default function Navbar() {
       transition={{ duration: 0.3, ease: 'easeOut' }}
       className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg"
     >
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-14 sm:h-16">
-          <Link href="/" className="flex items-center space-x-2 min-w-0 flex-shrink">
-            <span className="text-lg sm:text-xl md:text-2xl font-bold text-primary-600 truncate">Tours Creel Chih.</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <Link href="/" className="flex items-center space-x-2">
+            <span className="text-2xl font-bold text-primary-600">Ulises Tours</span>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
+          <div className="hidden md:flex items-center space-x-6">
             {menuItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm lg:text-base text-gray-700 hover:text-primary-600 transition-colors font-medium whitespace-nowrap"
+                className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
               >
                 {item.label}
               </Link>
             ))}
-            <Link
-              href="/cotizar"
-              className="bg-primary-600 text-white px-4 lg:px-5 py-2 rounded-lg text-sm lg:text-base font-semibold hover:bg-primary-700 transition-colors whitespace-nowrap"
-            >
-              {t('nav.quote')}
-            </Link>
-            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2.5 text-gray-700 touch-manipulation active:bg-gray-100 rounded-lg transition-colors"
+            className="md:hidden p-2 text-gray-700"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Menú"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -104,27 +83,17 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white/95 backdrop-blur-md border-t"
           >
-            <div className="px-4 py-3 space-y-1">
+            <div className="px-4 py-2 space-y-2">
               {menuItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="block py-3.5 px-2 text-base text-gray-700 hover:text-primary-600 hover:bg-gray-50 font-medium rounded-lg transition-colors touch-manipulation"
+                  className="block py-2 text-gray-700 hover:text-primary-600 font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
                 </Link>
               ))}
-              <Link
-                href="/cotizar"
-                className="block py-3.5 mt-2 bg-primary-600 text-white text-center rounded-lg text-base font-semibold hover:bg-primary-700 transition-colors touch-manipulation active:bg-primary-800"
-                onClick={() => setIsOpen(false)}
-              >
-                {t('nav.quote')}
-              </Link>
-              <div className="pt-2">
-                <LanguageSwitcher />
-              </div>
             </div>
           </motion.div>
         )}
