@@ -60,15 +60,16 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg"
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-14 sm:h-16">
-          <Link href="/" className="flex items-center space-x-2 min-w-0 flex-shrink">
+        <div className="flex justify-between items-center h-16 sm:h-18 md:h-20">
+          <Link href="/" className="flex items-center min-w-0 flex-shrink hover:opacity-80 transition-opacity py-2">
             <Image 
               src="/icon.png" 
               alt="Tours Creel Chih." 
-              width={120} 
-              height={40} 
-              className="h-8 sm:h-10 w-auto object-contain"
+              width={200} 
+              height={50} 
+              className="h-12 sm:h-14 md:h-16 w-auto object-contain"
               priority
+              style={{ objectFit: 'contain', maxHeight: '64px' }}
             />
           </Link>
 
