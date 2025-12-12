@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
@@ -61,7 +62,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="flex justify-between items-center h-14 sm:h-16">
           <Link href="/" className="flex items-center space-x-2 min-w-0 flex-shrink">
-            <span className="text-lg sm:text-xl md:text-2xl font-bold text-primary-600 truncate">Tours Creel Chih.</span>
+            <Image 
+              src="/icon.png" 
+              alt="Tours Creel Chih." 
+              width={120} 
+              height={40} 
+              className="h-8 sm:h-10 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Menu */}
