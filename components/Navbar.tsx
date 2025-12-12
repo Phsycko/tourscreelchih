@@ -62,13 +62,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-18 md:h-20">
           <Link href="/" className="flex items-center min-w-0 flex-shrink hover:opacity-80 transition-opacity py-2">
-            <Image 
-              src="/icon.png" 
+            <img 
+              src="https://chatgpt.com/backend-api/estuary/content?id=file_000000008d7871f5a48a82017ef890e0&ts=490437&p=fs&cid=1&sig=db6dbc0acfa5c72b18e849fa15416268ded8f7c5429b7bdc6d50b014913f29ca&v=0" 
               alt="Tours Creel Chih." 
-              width={200} 
-              height={50} 
               className="h-12 sm:h-14 md:h-16 w-auto object-contain"
-              priority
               style={{ objectFit: 'contain', maxHeight: '64px' }}
             />
           </Link>
