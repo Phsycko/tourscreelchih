@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Calendar, Users, CreditCard, CheckCircle } from 'lucide-react'
 import { useForm } from 'react-hook-form'
@@ -175,7 +175,7 @@ function ConfirmationStep({
   )
 }
 
-export default function ReservarPage() {
+function ReservarContent() {
   const searchParams = useSearchParams()
   const tourId = searchParams.get('tourId')
   
@@ -610,6 +610,21 @@ export default function ReservarPage() {
         </form>
       </div>
     </div>
+  )
+}
+
+export default function ReservarPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-slate-100 pt-24 pb-12 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-2 border-primary-600 border-t-transparent mx-auto mb-4"></div>
+          <p className="text-slate-600">Cargando...</p>
+        </div>
+      </div>
+    }>
+      <ReservarContent />
+    </Suspense>
   )
 }
 

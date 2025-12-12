@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { CheckCircle, Plus, X, Users } from 'lucide-react'
 import { useForm } from 'react-hook-form'
@@ -150,7 +150,7 @@ Gracias.`
   )
 }
 
-export default function CotizarPage() {
+function CotizarContent() {
   const searchParams = useSearchParams()
   const tourIdParam = searchParams.get('tourId')
   
@@ -540,6 +540,21 @@ export default function CotizarPage() {
         </form>
       </div>
     </div>
+  )
+}
+
+export default function CotizarPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-slate-100 pt-24 pb-12 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-2 border-primary-600 border-t-transparent mx-auto mb-4"></div>
+          <p className="text-slate-600">Cargando...</p>
+        </div>
+      </div>
+    }>
+      <CotizarContent />
+    </Suspense>
   )
 }
 
