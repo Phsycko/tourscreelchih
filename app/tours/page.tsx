@@ -43,10 +43,9 @@ export default function ToursPage() {
       duration: 11,
       maxCapacity: 20,
       difficulty: 'Moderado',
-      image: 'https://lh3.googleusercontent.com/d/1oCcVps4HIu2A2B9S34bzonD1aWgIfHQ2',
+      image: '/images/kokoyome.jpg',
       images: [
-        'https://lh3.googleusercontent.com/d/1oCcVps4HIu2A2B9S34bzonD1aWgIfHQ2',
-        'https://lh3.googleusercontent.com/d/1oCcVps4HIu2A2B9S34bzonD1aWgIfHQ2',
+        '/images/kokoyome.jpg',
       ],
       itinerary: [
         'Mirador del Ángel',
@@ -323,19 +322,14 @@ export default function ToursPage() {
                   >
                     <div className="relative h-48 sm:h-56 w-full overflow-hidden bg-neutral-100">
                       <img
-                        src={(tour.id === 'tour-kokoyome' || tour.title === 'Tour Kokoyome') ? 'https://lh3.googleusercontent.com/d/1oCcVps4HIu2A2B9S34bzonD1aWgIfHQ2' : (tour.image || 'https://lh3.googleusercontent.com/d/1oCcVps4HIu2A2B9S34bzonD1aWgIfHQ2')}
+                        src={(tour.id === 'tour-kokoyome' || tour.title === 'Tour Kokoyome') ? '/images/kokoyome.jpg' : (tour.image || '/images/kokoyome.jpg')}
                         alt={tour.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                         onError={(e) => {
                           // Si falla, intentar formato alternativo de Google Drive
-                          const currentSrc = e.currentTarget.src
                           if (tour.id === 'tour-kokoyome' || tour.title === 'Tour Kokoyome') {
-                            e.currentTarget.src = 'https://lh3.googleusercontent.com/d/1oCcVps4HIu2A2B9S34bzonD1aWgIfHQ2'
-                          } else if (currentSrc.includes('lh3.googleusercontent.com')) {
-                            e.currentTarget.src = 'https://drive.google.com/uc?export=view&id=1oCcVps4HIu2A2B9S34bzonD1aWgIfHQ2'
-                          } else if (currentSrc.includes('drive.google.com')) {
-                            e.currentTarget.src = 'https://lh3.googleusercontent.com/d/1oCcVps4HIu2A2B9S34bzonD1aWgIfHQ2'
+                            e.currentTarget.src = '/images/kokoyome.jpg'
                           }
                         }}
                       />

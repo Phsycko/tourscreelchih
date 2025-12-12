@@ -11,7 +11,7 @@ const defaultTours = [
     duration: 11,
     maxCapacity: 20,
     difficulty: 'Moderado',
-    image: 'https://lh3.googleusercontent.com/d/1oCcVps4HIu2A2B9S34bzonD1aWgIfHQ2',
+    image: '/images/kokoyome.jpg',
     itinerary: ['Mirador del Ángel', 'Parque Turístico de Kokoyome', 'Lago de las Garzas', 'El Salto'],
     includes: ['Guía profesional', 'Transporte', 'Seguro de viaje'],
     excludes: ['Alimentos', 'Propinas'],
